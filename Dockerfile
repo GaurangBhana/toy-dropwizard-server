@@ -6,7 +6,7 @@ WORKDIR /home/gradle/src
 RUN ./gradlew shadowJar
 
 # Get the Java version 8 image
-FROM java:8
+FROM eclipse-temurin:8-jdk
 
 WORKDIR /app
 COPY --from=build /home/gradle/src/build/libs/hello-friends-1.0-SNAPSHOT.jar /app
